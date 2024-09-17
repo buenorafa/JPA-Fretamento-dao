@@ -1,0 +1,271 @@
+23:06:48,755  INFO Util:28 - ----conectar banco - lendo arquivo de propriedades 
+23:06:48,758  INFO Util:33 - sgbd => postgresql
+23:06:48,758  INFO Util:34 - banco => fretamento
+23:06:48,758  INFO Util:35 - ip => localhost
+23:06:48,758  INFO Util:40 - ----configurando postgresql
+23:06:48,797 DEBUG logging:38 - Logging Provider: org.jboss.logging.Log4jLoggerProvider
+23:06:48,892  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+23:06:48,921  INFO Version:44 - HHH000412: Hibernate ORM core version 6.5.2.Final
+23:06:48,939 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+23:06:48,939  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+23:06:49,073  WARN pooling:81 - HHH10001002: Using built-in connection pool (not intended for production use)
+23:06:49,075  INFO pooling:136 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+23:06:49,075  INFO pooling:158 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/fretamento]
+23:06:49,076  INFO pooling:167 - HHH10001001: Connection properties: {password=****, user=postgres}
+23:06:49,076  INFO pooling:171 - HHH10001003: Autocommit mode: false
+23:06:49,077  INFO pooling:372 - HHH10001115: Connection pool size: 20 (min=1)
+23:06:49,809  INFO JtaPlatformInitiator:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+23:06:49,816  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@491799a1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+23:06:50,045 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:06:50,053 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:06:50,054 TRACE bind:24 - binding parameter (1:VARCHAR) <- [1112]
+23:06:50,057 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:06:50,057 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:06:50,058 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:06:50,058 TRACE bind:24 - binding parameter (1:VARCHAR) <- [3334]
+23:07:13,788 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:07:13,789 TRACE bind:24 - binding parameter (1:VARCHAR) <- [DDD8001]
+23:07:13,801 DEBUG SQL:135 - insert into Veiculo (modelo,placa) values (?,?)
+23:07:13,801 TRACE bind:24 - binding parameter (1:VARCHAR) <- [Ferrari]
+23:07:13,801 TRACE bind:24 - binding parameter (2:VARCHAR) <- [DDD8001]
+23:07:13,807 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:07:31,706 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:07:31,716 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAA5001]
+23:07:31,739 DEBUG SQL:135 - select v1_0.motorista_cnh,v1_0.id,v1_0.data,v1_0.destino,v2_0.placa,v2_0.modelo from Viagem v1_0 left join Veiculo v2_0 on v2_0.placa=v1_0.veiculo_placa where v1_0.motorista_cnh=?
+23:07:31,740 TRACE bind:24 - binding parameter (1:VARCHAR) <- [1112]
+23:07:44,334 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:07:44,335 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:07:44,339 DEBUG SQL:135 - select v1_0.motorista_cnh,v1_0.id,v1_0.data,v1_0.destino,v2_0.placa,v2_0.modelo from Viagem v1_0 left join Veiculo v2_0 on v2_0.placa=v1_0.veiculo_placa where v1_0.motorista_cnh=?
+23:07:44,339 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:07:50,340 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:07:50,342 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:07:50,355 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:07:53,543 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:07:55,115 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:07:57,323 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:07:57,515 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:07:57,741 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:08:02,133 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:02,143 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:08:04,773 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:04,776 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:08:04,799 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:08:07,075 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:08:09,879 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:09,884 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:08:09,893 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:08:12,459 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:12,460 TRACE bind:24 - binding parameter (1:VARCHAR) <- [CCC9001]
+23:08:12,469 DEBUG SQL:135 - delete from Viagem where id=?
+23:08:12,469 TRACE bind:24 - binding parameter (1:VARCHAR) <- [240609CCC90013334]
+23:08:12,485 DEBUG SQL:135 - delete from Veiculo where placa=?
+23:08:12,485 TRACE bind:24 - binding parameter (1:VARCHAR) <- [CCC9001]
+23:08:12,491 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:08:21,193 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:21,195 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:08:21,200 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:08:24,736 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:24,738 TRACE bind:24 - binding parameter (1:VARCHAR) <- [DDD8001]
+23:08:24,742 DEBUG SQL:135 - delete from Veiculo where placa=?
+23:08:24,743 TRACE bind:24 - binding parameter (1:VARCHAR) <- [DDD8001]
+23:08:24,746 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:08:26,530 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:26,531 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAA5001]
+23:08:26,534 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:08:28,905 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:28,907 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:08:28,911 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo,v2_0.veiculo_placa,v2_0.id,v2_0.data,v2_0.destino,v2_0.motorista_cnh from Veiculo v1_0 left join Viagem v2_0 on v1_0.placa=v2_0.veiculo_placa order by v1_0.placa
+23:08:31,313  INFO Util:75 - ----desconectar banco
+23:08:31,330  INFO pooling:607 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/fretamento]
+23:08:32,550  INFO Util:28 - ----conectar banco - lendo arquivo de propriedades 
+23:08:32,551  INFO Util:33 - sgbd => postgresql
+23:08:32,551  INFO Util:34 - banco => fretamento
+23:08:32,551  INFO Util:35 - ip => localhost
+23:08:32,551  INFO Util:40 - ----configurando postgresql
+23:08:32,557  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+23:08:32,559 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+23:08:32,559  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+23:08:32,584  WARN pooling:81 - HHH10001002: Using built-in connection pool (not intended for production use)
+23:08:32,586  INFO pooling:136 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+23:08:32,586  INFO pooling:158 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/fretamento]
+23:08:32,586  INFO pooling:167 - HHH10001001: Connection properties: {password=****, user=postgres}
+23:08:32,586  INFO pooling:171 - HHH10001003: Autocommit mode: false
+23:08:32,586  INFO pooling:372 - HHH10001115: Connection pool size: 20 (min=1)
+23:08:32,742  INFO JtaPlatformInitiator:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+23:08:32,742  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@5a3ddd73] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+23:08:32,793 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0
+23:08:32,794 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:08:32,795 TRACE bind:24 - binding parameter (1:VARCHAR) <- [1112]
+23:08:32,796 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:32,796 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAA5001]
+23:08:32,796 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:08:32,797 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:08:32,797 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:08:32,797 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:08:37,465 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0 where v1_0.id=?
+23:08:37,467 TRACE bind:24 - binding parameter (1:VARCHAR) <- [240108AAA50011112]
+23:08:38,824 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0 where v1_0.id=?
+23:08:38,825 TRACE bind:24 - binding parameter (1:VARCHAR) <- [240108AAA50011112]
+23:08:41,141 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0 where v1_0.id=?
+23:08:41,143 TRACE bind:24 - binding parameter (1:VARCHAR) <- [240108AAA50011112]
+23:08:41,146 DEBUG SQL:135 - select v1_0.veiculo_placa,v1_0.id,v1_0.data,v1_0.destino,m1_0.cnh,m1_0.nome from Viagem v1_0 left join Motorista m1_0 on m1_0.cnh=v1_0.motorista_cnh where v1_0.veiculo_placa=?
+23:08:41,147 TRACE bind:24 - binding parameter (1:VARCHAR) <- [AAA5001]
+23:08:41,149 DEBUG SQL:135 - select v1_0.motorista_cnh,v1_0.id,v1_0.data,v1_0.destino,v2_0.placa,v2_0.modelo from Viagem v1_0 left join Veiculo v2_0 on v2_0.placa=v1_0.veiculo_placa where v1_0.motorista_cnh=?
+23:08:41,150 TRACE bind:24 - binding parameter (1:VARCHAR) <- [1112]
+23:08:41,160 DEBUG SQL:135 - delete from Viagem where id=?
+23:08:41,161 TRACE bind:24 - binding parameter (1:VARCHAR) <- [240108AAA50011112]
+23:08:41,163 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0
+23:08:45,527  INFO Util:75 - ----desconectar banco
+23:08:45,533  INFO pooling:607 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/fretamento]
+23:08:47,133  INFO Util:28 - ----conectar banco - lendo arquivo de propriedades 
+23:08:47,134  INFO Util:33 - sgbd => postgresql
+23:08:47,134  INFO Util:34 - banco => fretamento
+23:08:47,134  INFO Util:35 - ip => localhost
+23:08:47,134  INFO Util:40 - ----configurando postgresql
+23:08:47,141  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+23:08:47,143 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+23:08:47,143  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+23:08:47,168  WARN pooling:81 - HHH10001002: Using built-in connection pool (not intended for production use)
+23:08:47,169  INFO pooling:136 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+23:08:47,169  INFO pooling:158 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/fretamento]
+23:08:47,169  INFO pooling:167 - HHH10001001: Connection properties: {password=****, user=postgres}
+23:08:47,169  INFO pooling:171 - HHH10001003: Autocommit mode: false
+23:08:47,172  INFO pooling:372 - HHH10001115: Connection pool size: 20 (min=1)
+23:08:47,285  INFO JtaPlatformInitiator:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+23:08:47,286  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@3c849385] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+23:08:47,328 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0
+23:08:49,800 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:08:49,802 TRACE bind:24 - binding parameter (1:VARCHAR) <- [1112]
+23:08:49,822 DEBUG SQL:135 - select v1_0.motorista_cnh,v1_0.id,v1_0.data,v1_0.destino,v2_0.placa,v2_0.modelo from Viagem v1_0 left join Veiculo v2_0 on v2_0.placa=v1_0.veiculo_placa where v1_0.motorista_cnh=?
+23:08:49,822 TRACE bind:24 - binding parameter (1:VARCHAR) <- [1112]
+23:08:52,386 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:08:52,389 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:08:52,394 DEBUG SQL:135 - select v1_0.motorista_cnh,v1_0.id,v1_0.data,v1_0.destino,v2_0.placa,v2_0.modelo from Viagem v1_0 left join Veiculo v2_0 on v2_0.placa=v1_0.veiculo_placa where v1_0.motorista_cnh=?
+23:08:52,395 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:08:52,398 DEBUG SQL:135 - select v1_0.veiculo_placa,v1_0.id,v1_0.data,v1_0.destino,m1_0.cnh,m1_0.nome from Viagem v1_0 left join Motorista m1_0 on m1_0.cnh=v1_0.motorista_cnh where v1_0.veiculo_placa=?
+23:08:52,399 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:08:55,587 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:08:55,589 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:08:55,594 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0
+23:08:58,915 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:08:58,917 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:08:58,920 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0
+23:10:22,099 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:10:22,101 TRACE bind:24 - binding parameter (1:VARCHAR) <- [3334]
+23:10:22,114 DEBUG SQL:135 - select v1_0.motorista_cnh,v1_0.id,v1_0.data,v1_0.destino,v2_0.placa,v2_0.modelo from Viagem v1_0 left join Veiculo v2_0 on v2_0.placa=v1_0.veiculo_placa where v1_0.motorista_cnh=?
+23:10:22,114 TRACE bind:24 - binding parameter (1:VARCHAR) <- [3334]
+23:10:25,186 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:10:25,188 TRACE bind:24 - binding parameter (1:VARCHAR) <- [3334]
+23:10:25,193 DEBUG SQL:135 - delete from Motorista where cnh=?
+23:10:25,194 TRACE bind:24 - binding parameter (1:VARCHAR) <- [3334]
+23:10:25,203 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0
+23:10:31,077 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:10:31,079 TRACE bind:24 - binding parameter (1:VARCHAR) <- [1112]
+23:10:33,695 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:10:33,697 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:10:36,386 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:10:36,387 TRACE bind:24 - binding parameter (1:VARCHAR) <- [1112]
+23:10:36,390 DEBUG SQL:135 - delete from Motorista where cnh=?
+23:10:36,391 TRACE bind:24 - binding parameter (1:VARCHAR) <- [1112]
+23:10:36,396 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0
+23:10:43,563  INFO Util:75 - ----desconectar banco
+23:10:43,571  INFO pooling:607 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/fretamento]
+23:10:48,418  INFO Util:28 - ----conectar banco - lendo arquivo de propriedades 
+23:10:48,419  INFO Util:33 - sgbd => postgresql
+23:10:48,419  INFO Util:34 - banco => fretamento
+23:10:48,419  INFO Util:35 - ip => localhost
+23:10:48,419  INFO Util:40 - ----configurando postgresql
+23:10:48,426  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+23:10:48,428 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+23:10:48,429  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+23:10:48,460  WARN pooling:81 - HHH10001002: Using built-in connection pool (not intended for production use)
+23:10:48,461  INFO pooling:136 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+23:10:48,461  INFO pooling:158 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/fretamento]
+23:10:48,461  INFO pooling:167 - HHH10001001: Connection properties: {password=****, user=postgres}
+23:10:48,462  INFO pooling:171 - HHH10001003: Autocommit mode: false
+23:10:48,462  INFO pooling:372 - HHH10001115: Connection pool size: 20 (min=1)
+23:10:48,589  INFO JtaPlatformInitiator:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+23:10:48,590  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@75abd20] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+23:11:38,092 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0 where v1_0.veiculo_placa=? and v1_0.motorista_cnh=?
+23:11:38,094 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:11:38,094 TRACE bind:24 - binding parameter (2:VARCHAR) <- [2223]
+23:11:38,098 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:11:38,099 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:11:38,102 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:11:38,102 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:12:03,273 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0 where v1_0.data=?
+23:12:03,275 TRACE bind:24 - binding parameter (1:TIMESTAMP) <- [0012-12-16 00:00:00.0]
+23:12:05,133 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0 where v1_0.data=?
+23:12:05,133 TRACE bind:24 - binding parameter (1:TIMESTAMP) <- [0012-12-16 00:00:00.0]
+23:12:27,539  INFO Util:75 - ----desconectar banco
+23:12:27,555  INFO pooling:607 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/fretamento]
+23:12:31,697  INFO Util:28 - ----conectar banco - lendo arquivo de propriedades 
+23:12:31,700  INFO Util:33 - sgbd => postgresql
+23:12:31,700  INFO Util:34 - banco => fretamento
+23:12:31,700  INFO Util:35 - ip => localhost
+23:12:31,700  INFO Util:40 - ----configurando postgresql
+23:12:31,706  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+23:12:31,733 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+23:12:31,734  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+23:12:31,750  WARN pooling:81 - HHH10001002: Using built-in connection pool (not intended for production use)
+23:12:31,751  INFO pooling:136 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+23:12:31,751  INFO pooling:158 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/fretamento]
+23:12:31,751  INFO pooling:167 - HHH10001001: Connection properties: {password=****, user=postgres}
+23:12:31,751  INFO pooling:171 - HHH10001003: Autocommit mode: false
+23:12:31,751  INFO pooling:372 - HHH10001115: Connection pool size: 20 (min=1)
+23:12:31,843  INFO JtaPlatformInitiator:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+23:12:31,844  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@59ffbe72] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+23:12:31,876 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0
+23:12:33,732 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:12:33,735 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:12:33,739 DEBUG SQL:135 - select v1_0.motorista_cnh,v1_0.id,v1_0.data,v1_0.destino,v2_0.placa,v2_0.modelo from Viagem v1_0 left join Veiculo v2_0 on v2_0.placa=v1_0.veiculo_placa where v1_0.motorista_cnh=?
+23:12:33,740 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:12:33,744 DEBUG SQL:135 - select v1_0.veiculo_placa,v1_0.id,v1_0.data,v1_0.destino,m1_0.cnh,m1_0.nome from Viagem v1_0 left join Motorista m1_0 on m1_0.cnh=v1_0.motorista_cnh where v1_0.veiculo_placa=?
+23:12:33,744 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:12:39,522  INFO Util:75 - ----desconectar banco
+23:12:39,529  INFO pooling:607 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/fretamento]
+23:12:41,306  INFO Util:28 - ----conectar banco - lendo arquivo de propriedades 
+23:12:41,307  INFO Util:33 - sgbd => postgresql
+23:12:41,307  INFO Util:34 - banco => fretamento
+23:12:41,308  INFO Util:35 - ip => localhost
+23:12:41,308  INFO Util:40 - ----configurando postgresql
+23:12:41,316  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+23:12:41,319 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+23:12:41,319  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+23:12:41,344  WARN pooling:81 - HHH10001002: Using built-in connection pool (not intended for production use)
+23:12:41,345  INFO pooling:136 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+23:12:41,345  INFO pooling:158 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/fretamento]
+23:12:41,345  INFO pooling:167 - HHH10001001: Connection properties: {password=****, user=postgres}
+23:12:41,345  INFO pooling:171 - HHH10001003: Autocommit mode: false
+23:12:41,345  INFO pooling:372 - HHH10001115: Connection pool size: 20 (min=1)
+23:12:41,409  INFO JtaPlatformInitiator:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+23:12:41,409  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6f78fd3e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+23:12:41,446 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0
+23:12:41,448 DEBUG SQL:135 - select m1_0.cnh,m1_0.nome from Motorista m1_0 where m1_0.cnh=?
+23:12:41,448 TRACE bind:24 - binding parameter (1:VARCHAR) <- [2223]
+23:12:41,449 DEBUG SQL:135 - select v1_0.placa,v1_0.modelo from Veiculo v1_0 where v1_0.placa=?
+23:12:41,450 TRACE bind:24 - binding parameter (1:VARCHAR) <- [BBB7001]
+23:12:51,118  INFO Util:75 - ----desconectar banco
+23:12:51,125  INFO pooling:607 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/fretamento]
+23:12:52,802  INFO Util:28 - ----conectar banco - lendo arquivo de propriedades 
+23:12:52,803  INFO Util:33 - sgbd => postgresql
+23:12:52,804  INFO Util:34 - banco => fretamento
+23:12:52,804  INFO Util:35 - ip => localhost
+23:12:52,804  INFO Util:40 - ----configurando postgresql
+23:12:52,810  INFO LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: hibernate-postgresql]
+23:12:52,812 DEBUG RegionFactoryInitiator:122 - Cannot default RegionFactory based on registered strategies as `[]` RegionFactory strategies were registered
+23:12:52,812  INFO RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+23:12:52,836  WARN pooling:81 - HHH10001002: Using built-in connection pool (not intended for production use)
+23:12:52,837  INFO pooling:136 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+23:12:52,837  INFO pooling:158 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/fretamento]
+23:12:52,837  INFO pooling:167 - HHH10001001: Connection properties: {password=****, user=postgres}
+23:12:52,837  INFO pooling:171 - HHH10001003: Autocommit mode: false
+23:12:52,838  INFO pooling:372 - HHH10001115: Connection pool size: 20 (min=1)
+23:12:52,899  INFO JtaPlatformInitiator:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+23:12:52,899  INFO access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4fba1609] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+23:13:12,830 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0 where v1_0.data=?
+23:13:12,832 TRACE bind:24 - binding parameter (1:TIMESTAMP) <- [0026-07-06 00:00:00.0]
+23:13:18,542 DEBUG SQL:135 - select v1_0.id,v1_0.data,v1_0.destino,v1_0.motorista_cnh,v1_0.veiculo_placa from Viagem v1_0 where v1_0.data=?
+23:13:18,544 TRACE bind:24 - binding parameter (1:TIMESTAMP) <- [0026-07-06 00:00:00.0]
+23:13:23,500  INFO Util:75 - ----desconectar banco
+23:13:23,508  INFO pooling:607 - HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/fretamento]
