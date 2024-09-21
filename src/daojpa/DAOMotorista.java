@@ -29,7 +29,7 @@ public class DAOMotorista extends DAO<Motorista>{
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 	public List<Motorista> maisDeNViagens(int n) {
 	    TypedQuery<Motorista> q = manager.createQuery(
-	        "SELECT m FROM Motorista m WHERE m.viagens.size > :n ORDER BY m.id", 
+	        "SELECT m FROM Motorista m WHERE size(m.viagens) > :n ORDER BY m.id", 
 	        Motorista.class
 	    );
 	    q.setParameter("n", n);

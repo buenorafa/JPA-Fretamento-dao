@@ -99,7 +99,6 @@ public class Fachada {
 		 String[] DATE_FORMATS = {
 			        "dd-MM-yyyy",
 			        "yyyy-MM-dd",
-			        "MM/dd/yyyy",
 			        "dd/MM/yyyy"
 			    };
 		 for (String format : DATE_FORMATS) {

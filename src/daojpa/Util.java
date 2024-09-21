@@ -29,7 +29,7 @@ public class Util {
 				dados.load(Util.class.getResourceAsStream("/daojpa/util.properties")); // dentro de src
 				String sgbd = dados.getProperty("sgbd");
 				String banco = dados.getProperty("banco");
-				String ip = dados.getProperty("ip1"); // ip1 ou ip2 ou ip3
+				String ip = dados.getProperty("ip1");
 				logger.info("sgbd => " + sgbd);
 				logger.info("banco => " + banco);
 				logger.info("ip => " + ip);
@@ -54,14 +54,8 @@ public class Util {
 				}
 				// -----------------------------------------------------------------------------------
 				String unit_name = "hibernate" + "-" + sgbd;
-				System.out.println("UTIL:CONECTAR_BANCO:UNIT_NAME: ");
-				System.out.println(unit_name);
 				factory = Persistence.createEntityManagerFactory(unit_name, configuracoes);
-				System.out.println("UTIL:CONECTAR_BANCO:FACTORY: ");
-				System.out.println(factory);
 				manager = factory.createEntityManager();
-				System.out.println("UTIL:CONECTAR_BANCO:MANAGER: ");
-				System.out.println(manager);
 
 			} catch (Exception e) {
 				logger.info("problema de configuracao: " + e.getMessage());

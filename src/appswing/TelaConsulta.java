@@ -329,7 +329,7 @@ public class TelaConsulta{
 	public void listagem_3(String n) {
 		try{
 			List<Motorista> lista = Fachada.maisDeNViagens(n);
-
+			
 			// model armazena todas as linhas e colunas do table
 			DefaultTableModel model = new DefaultTableModel();
 
