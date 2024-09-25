@@ -42,7 +42,7 @@ public class Util {
 					configuracoes.setProperty("jakarta.persistence.jdbc.url",
 							"jdbc:postgresql://" + ip + ":5432/" + banco);
 					configuracoes.setProperty("jakarta.persistence.jdbc.user", "postgres");
-					configuracoes.setProperty("jakarta.persistence.jdbc.password", "ifpb");
+					configuracoes.setProperty("jakarta.persistence.jdbc.password", "islan123");
 				}
 				if (sgbd.equals("mysql")) {
 					logger.info("----configurando mysql");

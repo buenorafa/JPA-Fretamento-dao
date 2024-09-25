@@ -1,8 +1,9 @@
 package regras_negocio;
 
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.DateTimeException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -50,6 +51,9 @@ public class Fachada {
 		if (motorista ==null) {
 			throw new Exception("Motorista não encontrado: " + cnh);
 		}
+		if (motorista.getViagens().size() > 0) {
+			throw new Exception("Exclusão proibida! Existem viagens cadastradas para o motorista!");	
+		}
 		daomotorista.delete(motorista);
 		DAO.commit();
 	}
@@ -82,6 +86,9 @@ public class Fachada {
 		if (veiculo == null) {
 			throw new Exception("Veículo não encontrado: " + veiculo);
 		}
+		if (veiculo.getViagens().size() > 0) {
+			throw new Exception("Exclusão proibida! Existem viagens cadastradas para o veículo!");	
+		}
 		daoveiculo.delete(veiculo);
 		DAO.commit();
 	}
@@ -95,20 +102,45 @@ public class Fachada {
 		return daoveiculo.read(placa);
 	}
 	
-	private static Date criarData(String data) throws Exception {
+//	private static Date criarData(String data) throws Exception {
+//		 String[] DATE_FORMATS = {
+//			        "dd-MM-yyyy",
+//			        "yyyy-MM-dd",
+//			        "dd/MM/yyyy"
+//			    };
+//		 for (String format : DATE_FORMATS) {
+//			 Date dataconvertida;
+//			 String dataformatada;
+//	            try {
+//	                SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+//	                dataformatada = dateFormat.format(data);
+//	                dataconvertida = dateFormat.parse(dataformatada);
+//	                dateFormat.format(dataconvertida);
+//	                return dataconvertida;
+//	            } catch (ParseException e) {
+//	                // Ignorar e tentar o próximo formato
+//	            }
+//	        }
+//	        // Se nenhum formato for válido, retornar null ou lançar exceção
+//	        return null;
+//	}
+	
+	private static LocalDate criarData(String data) throws Exception {
 		 String[] DATE_FORMATS = {
 			        "dd-MM-yyyy",
 			        "yyyy-MM-dd",
 			        "dd/MM/yyyy"
 			    };
 		 for (String format : DATE_FORMATS) {
-	            try {
-	                SimpleDateFormat dateFormat = new SimpleDateFormat(format);
-	                return dateFormat.parse(data);
-	            } catch (ParseException e) {
-	                // Ignorar e tentar o próximo formato
-	            }
-	        }
+	         try {
+	         DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern(format);	        
+	         LocalDate dataconvertida = LocalDate.parse(data, dateFormat); 
+	         return dataconvertida;
+	         }
+			catch(DateTimeException e) {
+
+	          
+	        }}
 	        // Se nenhum formato for válido, retornar null ou lançar exceção
 	        return null;
 	}
@@ -129,12 +161,12 @@ public class Fachada {
 		} 
 		
 		//Formatação da data
-		Date dataConv = criarData(data);
+		LocalDate dataConv = criarData(data);
 		if(dataConv == null) {
 			throw new Exception("Cadastrar viagem - Formato de data inválido: "+ data);
 		}
 						
-
+		
 		String id = Viagem.geraId(dataConv, placa, cnh);
 
 		//Verifica se viagem já existe
@@ -191,7 +223,7 @@ public class Fachada {
 	// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 	
 	public static List<Viagem> viagensNaData(String data) throws Exception{	
-		Date dataFormatada = criarData(data);
+		LocalDate dataFormatada = criarData(data);
 		List<Viagem> resultados =  daoviagem.viagensNaData(dataFormatada);
 		return resultados;
 	}

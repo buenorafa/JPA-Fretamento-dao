@@ -1,8 +1,8 @@
 package modelo;
 
 import java.text.SimpleDateFormat;
-
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -14,7 +14,7 @@ import jakarta.persistence.ManyToOne;
 public class Viagem {
 	@Id
 	private String id;
-	private Date data;
+	private LocalDate data;
 	@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.MERGE}) 
 	@JoinColumn(name="veiculo_placa")
 	private Veiculo veiculo;
@@ -24,7 +24,7 @@ public class Viagem {
 	
 	public Viagem() {}
 
-	public Viagem(Date data, Veiculo veiculo, Motorista motorista, String destino) {
+	public Viagem(LocalDate data, Veiculo veiculo, Motorista motorista, String destino) {
 		this.data = data;
 		this.veiculo = veiculo;
 		this.motorista = motorista;
@@ -32,9 +32,9 @@ public class Viagem {
 		this.id = geraId(data, veiculo.getPlaca(), motorista.getCnh());
 	}
 
-	public static String geraId(Date data, String placa, String cnh) {
-		SimpleDateFormat dateFormatter = new SimpleDateFormat("yyMMdd");
-		String formattedDate = dateFormatter.format(data);
+	public static String geraId(LocalDate data, String placa, String cnh) {
+		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyMMdd");
+		String formattedDate = data.format(dateFormatter);
 		return formattedDate + placa + cnh;
 	}
 
@@ -42,7 +42,7 @@ public class Viagem {
 		return id;
 	}
 
-	public Date getData() {
+	public LocalDate getData() {
 		return data;
 	}
 
@@ -76,7 +76,7 @@ public class Viagem {
 	}
 	
 	// Método para obter a data como uma string no formato dd-MM-yyyy
-	public String getDataAsString(Date data) {
+	public String getDataAsString(LocalDate data) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 		return dateFormat.format(data);
 	}

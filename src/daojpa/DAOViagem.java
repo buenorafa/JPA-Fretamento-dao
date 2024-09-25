@@ -6,7 +6,7 @@
 package daojpa;
 
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 //import java.util.List;
@@ -42,7 +42,7 @@ public class DAOViagem extends DAO<Viagem> {
 //		q.setParameter("x", "%" + digitos + "%");
 //		return q.getResultList();
 //	}
-	public List<Viagem> viagensNaData(Date data) {
+	public List<Viagem> viagensNaData(LocalDate data) {
 	    TypedQuery<Viagem> q = manager.createQuery(
 	        "SELECT v FROM Viagem v WHERE v.data = :data", 
 	        Viagem.class
